@@ -10,6 +10,7 @@ import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
 import { authenticateUser } from "./middleware/authMiddleware.js";
 import userRouter from "./routes/userRouter.js";
 import path from "path";
+import { fileURLToPath } from "url";
 const app = express();
 dotenv.config();
 
@@ -26,6 +27,8 @@ app.use("/api/v1/tasks", authenticateUser, taskRouter);
 app.use("/api/v1/auth", authRouter);
 //user router
 app.use("/api/v1/users", authenticateUser, userRouter);
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.use(express.static(path.resolve(__dirname, "./client/dist")));
 
