@@ -10,7 +10,7 @@ import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
 import { authenticateUser } from "./middleware/authMiddleware.js";
 import userRouter from "./routes/userRouter.js";
 import path from "path";
-import dirname from "path";
+import { dirname } from "path";
 import { fileURLToPath } from "url";
 const app = express();
 dotenv.config();
