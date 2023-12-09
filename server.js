@@ -27,6 +27,8 @@ app.use("/api/v1/auth", authRouter);
 //user router
 app.use("/api/v1/users", authenticateUser, userRouter);
 
+app.use(express.static(path.resolve(__dirname, "./client/dist")));
+
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./public", "index.html"));
 });
