@@ -9,7 +9,7 @@ import authRouter from "./routes/authRouter.js";
 import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
 import { authenticateUser } from "./middleware/authMiddleware.js";
 import userRouter from "./routes/userRouter.js";
-
+import path from "path";
 const app = express();
 dotenv.config();
 
